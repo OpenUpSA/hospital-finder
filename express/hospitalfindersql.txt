@@ -1,0 +1,14 @@
+Muizenberg: -34.1050000,18.4716670
+
+SELECT name, province, latitude, longitude,
+      111.045* DEGREES(ACOS(COS(RADIANS(latpoint))
+                 * COS(RADIANS(latitude))
+                 * COS(RADIANS(longpoint) - RADIANS(longitude))
+                 + SIN(RADIANS(latpoint))
+                 * SIN(RADIANS(latitude)))) AS distance_in_km
+ FROM hospitals
+ JOIN (
+     SELECT  -34.1050000  AS latpoint,  18.4716670 AS longpoint
+   ) AS p
+ ORDER BY distance_in_km
+ LIMIT 15

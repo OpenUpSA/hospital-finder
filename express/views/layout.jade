@@ -1,0 +1,19 @@
+doctype html
+html
+	head
+		title= title
+		link(rel='stylesheet', href='/bower_components/bootstrap/dist/css/bootstrap.min.css')
+		body
+			div.container
+				div.col-sm-1
+					img(src="/images/heart.png" alt="Hospital Finder" class="pull-left")
+				div.col-sm-11
+					h1 Code4SA City Press Hospital Finder
+			block content
+
+			footer
+				div.container
+					a(href="http://pixabay.com/en/heart-ekg-ecg-heart-rate-red-love-213747/") Image from Pixabay
+			script(src="/bower_components/jquery/dist/jquery.min.js")
+			script(src="/javascripts/hospitals.js")
+			script(src="/bower_components/handlebars/handlebars.min.js")
