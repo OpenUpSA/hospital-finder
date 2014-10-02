@@ -1,3 +1,5 @@
+var geo_api_key = "AIzaSyDE9USWolKfcLaICyby4HvdnSVDDQbA7X8";
+
 function showLoading() {
 	console.log("Show loading");
 	$("#finding_location").show();
@@ -14,7 +16,7 @@ function getLocation() {
 
 function getLocationResult(position) {
 	showPosition(position.coords.latitude, position.coords.longitude);
-	var url = "https://maps.googleapis.com/maps/api/geocode/json?latlng="+position.coords.latitude+","+position.coords.longitude+"&key=AIzaSyDE9USWolKfcLaICyby4HvdnSVDDQbA7X8"
+	var url = "https://maps.googleapis.com/maps/api/geocode/json?latlng="+position.coords.latitude+","+position.coords.longitude+"&key=" + geo_api_key
 	$.get(url, function(data) {
 		// console.log(data);
 		if (data.status=="OK") {
