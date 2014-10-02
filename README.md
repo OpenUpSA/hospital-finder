@@ -1,4 +1,4 @@
-=Hospital Finder=
+# Hospital Finder
 
 This project uses data supplied by City Press of South African hospitals that have been surveyed by the Department of Health in 2011/2012.
 
@@ -8,11 +8,15 @@ The second part, under express, is a Node.js Express app that searches for the n
 
 The app uses MySql. You'll have to have MySql running to use it. The default database is "hospitals", with the table "hospitals". You'll find the Sql in the express/data folder. The host is localhost, the user is c4sa_hospitals and the password is RZaAS24MHes2rB9c. You can change all of these in /express/routes/find.js.
 
+## Installation
+
 To install the express app, do the following:
 
+```bash
 cd express
 npm install
 npm start
+```
 
 The app should now be running on port http://localhost:3000.
 
