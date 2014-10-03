@@ -11,7 +11,6 @@ var connection = mysql.createConnection({
 
 connection.connect(function(err) {
 	if (err) {
-		res.status(500).send("Database broken :(");
 		console.log(err);
 		return;
 	}
