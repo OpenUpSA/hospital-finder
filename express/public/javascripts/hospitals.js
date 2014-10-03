@@ -61,3 +61,27 @@ $("#btn_location").click(function() {
 	$("#finding_location").show();
 	getLocation();
 });
+
+$.fn.enterKey = function (fnc) {
+    return this.each(function () {
+        $(this).keypress(function (ev) {
+            var keycode = (ev.keyCode ? ev.keyCode : ev.which);
+            if (keycode == '13') {
+                fnc.call(this, ev);
+            }
+        })
+    })
+}
+
+$(function() {
+    // focus on page load
+    $("#address").focus();
+    // focus on button after input changes
+    $("#address").on('change', function(){
+        $("#btn_search").focus();
+    })
+    // pass click event to button when pressing the "enter" key
+    $("#address").enterKey(function () {
+        $("#btn_search").click();
+    })
+});
