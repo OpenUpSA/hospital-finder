@@ -14,6 +14,7 @@
     "debug": "~2.0.0",
     "jade": "~1.6.0",
     "node-mysql": "^0.4.0",
+    "newrelic": "~1.11.3",
     "isnumeric": "^0.1.2",
     "mysql": "^2.5.1",
     "request": "^2.44.0"
