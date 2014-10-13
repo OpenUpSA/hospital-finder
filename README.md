@@ -10,6 +10,19 @@ The app uses MySql. You'll have to have MySql running to use it. The default dat
 
 ## Installation
 
+To set up MySql, do the following in MySql
+```mysql
+create database hospitals;
+create user 'c4sa_hospitals'@'localhost' identified by 'RZaAS24MHes2rB9c';
+grant all privileges on hospitals.* to 'c4sa_hospitals'@'localhost';
+flush privileges;
+```
+
+Then on the command line:
+```bash
+mysql hospitals -uroot -p(your password) < express/data/hospitals.sql
+```
+
 To install the express app, do the following:
 
 ```bash
