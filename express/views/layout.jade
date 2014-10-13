@@ -3,8 +3,10 @@ html
 	head
 		title= title
 		link(rel='stylesheet', href='/bower_components/bootstrap/dist/css/bootstrap.min.css')
+		link(rel='stylesheet', href='/stylesheets/css/style.css')
+		meta(name="viewport" content="width=device-width, initial-scale=1")
 		body
-			div.container
+			div.container-fluid
 				div.col-sm-1
 					img(src="/images/heart.png" alt="Hospital Finder" class="pull-left")
 				div.col-sm-11
@@ -12,7 +14,7 @@ html
 			block content
 
 			footer
-				div.container
+				div.container-fluid
 					a(href="http://pixabay.com/en/heart-ekg-ecg-heart-rate-red-love-213747/") Image from Pixabay
 			script(src="/bower_components/jquery/dist/jquery.min.js")
 			script(src="/javascripts/hospitals.js")
