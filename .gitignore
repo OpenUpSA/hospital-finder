@@ -1,2 +1,3 @@
 .DS_Store
 *.pdf
+newrelic_agent.log
