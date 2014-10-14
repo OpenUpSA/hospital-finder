@@ -73,6 +73,18 @@ $.fn.enterKey = function (fnc) {
     })
 }
 
+Handlebars.registerHelper('stars', function(perc) {
+	var count = Math.round(perc/20);
+	var s = "";
+	for (var i = 0; i < count; i++) {
+		s += "<i class='fa fa-star'></i>";
+	}
+	for (var i = count; i < 5; i++) {
+		s += "<i class='fa fa-star-o'></i>";
+	}
+	return new Handlebars.SafeString(s);
+});
+
 $(function() {
     // focus on page load
     $("#address").focus();

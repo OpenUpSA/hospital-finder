@@ -15,17 +15,23 @@ block content
 
 		dl.dl-horizontal
 			dt Overall Rating
-			dd= hospital.overall_performance
+			dd 
+				+stars(hospital.overall_performance)
 			dt Infection Prevention
-			dd= hospital.infection_prevention_and_control
+			dd
+				+stars(hospital.infection_prevention_and_control)
 			dt Waiting Times
-			dd= hospital.waiting_times
+			dd
+				+stars(hospital.waiting_times)
 			dt Medicines and Supplies
-			dd= hospital.availability_of_medicines_and_supplies
+			dd
+				+stars(hospital.availability_of_medicines_and_supplies)
 			dt Attitude
-			dd= hospital.positive_and_caring_attitudes
+			dd
+				+stars(hospital.positive_and_caring_attitudes)
 			dt Cleanliness
-			dd= hospital.cleanliness
+			dd
+				+stars(hospital.cleanliness)
 
 		iframe(width="100%", height="400", frameborder="0", style="border:0", src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDE9USWolKfcLaICyby4HvdnSVDDQbA7X8&q=#{hospital.latitude},#{hospital.longitude}")
 

@@ -1,9 +1,20 @@
+mixin stars(perc)
+	- var count = Math.round(perc/20);
+	- for (var i = 0; i < count; i++) {
+		i.fa.fa-star
+	- }
+	- for (var i = count; i < 5; i++) {
+		i.fa.fa-star-o
+	- }
+
 doctype html
 html
 	head
 		title= title
 		link(rel='stylesheet', href='/bower_components/bootstrap/dist/css/bootstrap.min.css')
+		link(rel='stylesheet', href='/bower_components/font-awesome/css/font-awesome.min.css')
 		link(rel='stylesheet', href='/stylesheets/css/style.css')
+
 		meta(name="viewport" content="width=device-width, initial-scale=1")
 		body
 			div.container-fluid
@@ -19,5 +30,6 @@ html
 				div.container-fluid
 					a(href="http://pixabay.com/en/heart-ekg-ecg-heart-rate-red-love-213747/") Image from Pixabay
 			script(src="/bower_components/jquery/dist/jquery.min.js")
-			script(src="/javascripts/hospitals.js")
 			script(src="/bower_components/handlebars/handlebars.min.js")
+			script(src="/javascripts/hospitals.js")
+			
