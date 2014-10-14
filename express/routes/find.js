@@ -1,20 +1,8 @@
 var express = require('express');
 var isNumeric = require("isnumeric");
-var mysql = require("mysql");
 var router = express.Router();
+var connection = require("./connection");
 
-var connection = mysql.createConnection({
-	host     : 'localhost',
-	user     : 'c4sa_hospitals',
-	password : 'RZaAS24MHes2rB9c'
-});
-
-connection.connect(function(err) {
-	if (err) {
-		console.log(err);
-		return;
-	}
-});
 
 /* GET home page. */
 router.get('/', function(req, res) {
