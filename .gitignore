@@ -2,3 +2,4 @@
 *.pdf
 newrelic_agent.log
 */txt/
+express/node_modules/
