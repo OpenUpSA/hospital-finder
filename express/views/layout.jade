@@ -22,16 +22,14 @@ html
 
     meta(name="viewport" content="width=device-width, initial-scale=1")
     body
-      div.container
-        div.row
-          div.col-xs-1
-            a(href="/")
-              img(src="/images/heart.png" alt="Hospital Finder" class="pull-left")
-          div.col-xs-8
+      header
+        div.container
+          a(href="/")
+            img(src="/images/heart.png" alt="Hospital Finder" class="pull-left")
+          div.title
             a(href="/")
               h1 Hospital Finder
-          div.col-xs-1
-          div.col-xs-2
+            h3.text-muted Find the best public hospitals near you
 
       div#main-content
         block content

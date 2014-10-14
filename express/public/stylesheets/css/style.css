@@ -1,5 +1,17 @@
+header {
+  margin-top: 10px;
+}
+header img {
+  margin-right: 10px;
+}
+header h1 {
+  margin: 0px;
+}
+header h3 {
+  margin-top: 5px;
+}
 #content {
-  min-height: 200px;
+  min-height: 400px;
 }
 .bigger {
   font-size: 1.5em;
@@ -22,9 +34,6 @@
 .fa-star,
 .fa-star-o {
   color: #166bb0;
-}
-#main-content {
-  min-height: 400px;
 }
 footer {
   background-color: #f5f5f5;
