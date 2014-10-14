@@ -11,11 +11,6 @@
 .buttons button {
   margin-bottom: 5px;
 }
-.logo {
-  max-width: 100%;
-  vertical-align: center;
-  margin-top: 20px;
-}
 .vcenter {
   display: inline-block;
   vertical-align: middle;
@@ -25,16 +20,24 @@
 .fa-star-o {
   color: #166bb0;
 }
-footer {
-  text-align: center;
-  background-color: #444;
-  color: #aaa;
-  min-height: 60px;
-  padding: 20px;
-  font-size: smaller;
+#main-content {
+  min-height: 400px;
 }
-footer a,
-footer a:hover {
-  color: #ccc;
-  text-decoration: underline;
+footer {
+  background-color: #f5f5f5;
+  color: #444;
+  padding: 20px;
+}
+footer img {
+  max-width: 100%;
+  margin-bottom: 10px;
+  margin-right: 10px;
+}
+footer #c4sa_logo {
+  background-color: white;
+  padding: 8px;
+  max-height: 110px;
+}
+footer #citypress_logo {
+  max-height: 45px;
 }
