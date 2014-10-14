@@ -2,12 +2,12 @@ extends layout
 
 block content
 	div#content.container
-		div.row
-			div.col-sm-2
-				button(id="btn_location" class="btn btn-warning" type="button")
+		div.row.buttons
+			div.col-sm-3
+				button.btn.btn-warning.form-control(id="btn_location" type="button")
 					i(class="glyphicon glyphicon-screenshot") &nbsp;
-					span Find hospitals near me
-			div.col-sm-10
+					span Hospitals near me
+			div.col-sm-9
 				div.input-group
 					input(type="text" name="address" id="address" placeholder="Address" class="form-control")
 					span.input-group-btn
