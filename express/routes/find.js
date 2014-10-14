@@ -15,7 +15,7 @@ router.get('/', function(req, res) {
 		res.status(400).send("Parameters lat and lng must be numeric")
 	}
 	
-	connection.query('SELECT uid, name, province, latitude, longitude, tel, cel, street_address, overall_performance, `emergency_unit-hours_per_day`, `emergency_unit-days_per_week`, \
+	connection.query('SELECT uid, name, province, latitude, longitude, tel, cel, street_address, overall_performance, `emergency_unit-hours_per_day`, `emergency_unit-days_per_week`, classification, \
       111.045* DEGREES(ACOS(COS(RADIANS(latpoint)) \
                  * COS(RADIANS(latitude)) \
                  * COS(RADIANS(longpoint) - RADIANS(longitude)) \

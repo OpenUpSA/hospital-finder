@@ -4,6 +4,10 @@
 #hospitals {
   margin-top: 10px;
 }
+.vspaced {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
 .buttons button {
   margin-bottom: 5px;
 }
