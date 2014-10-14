@@ -1,12 +1,33 @@
 #content {
   min-height: 200px;
 }
-footer {
-  background-color: #444;
-  color: #ccc;
-  min-height: 80px;
-  padding: 20px;
+#hospitals {
+  margin-top: 10px;
 }
-footer a {
+.logo {
+  max-width: 100%;
+  vertical-align: center;
+  margin-top: 20px;
+}
+.vcenter {
+  display: inline-block;
+  vertical-align: middle;
+  float: none;
+}
+.fa-star,
+.fa-star-o {
+  color: #166bb0;
+}
+footer {
+  text-align: center;
+  background-color: #444;
+  color: #aaa;
+  min-height: 60px;
+  padding: 20px;
+  font-size: smaller;
+}
+footer a,
+footer a:hover {
   color: #ccc;
+  text-decoration: underline;
 }

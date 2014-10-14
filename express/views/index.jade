@@ -6,15 +6,19 @@ block content
 			div.col-sm-2
 				button(id="btn_location" class="btn btn-warning" type="button")
 					i(class="glyphicon glyphicon-screenshot") &nbsp;
-					span Find me
+					span Find hospitals near me
 			div.col-sm-10
 				div.input-group
 					input(type="text" name="address" id="address" placeholder="Address" class="form-control")
 					span.input-group-btn
 						button(id="btn_search" class="btn btn-primary" type="button") Go
-		div#finding_location Finding location
-		div#hospitals
-			h4 The Code4SA City Press Hospitals App uses data from the Department of Health's 2011/2012 survey of its hospitals and clinics to help you find the best medical services close by. Simply enter an address above and click "Go", else click "Find me" for us to detect your current location.
+		div.row
+			div.col-sm-12
+				div#finding_location.alert.alert-warning Finding location
+		div.row
+			div.col-sm-12
+				div#hospitals
+					div.alert.alert-info The Code4SA City Press Hospital Finder App uses data from the Department of Health's 2011/2012 survey of its hospitals and clinics to help you find the best medical services close by. Simply enter an address above and click "Go", else click "Find hospitals near me" for us to detect your current location.
 	
 	script(id="hospital-template" type="text/x-handlebars-template")
 		include hospital.html

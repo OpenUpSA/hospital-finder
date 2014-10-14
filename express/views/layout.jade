@@ -18,17 +18,32 @@ html
 		meta(name="viewport" content="width=device-width, initial-scale=1")
 		body
 			div.container-fluid
-				div.col-sm-1
-					a(href="/")
-						img(src="/images/heart.png" alt="Hospital Finder" class="pull-left")
-				div.col-sm-11
-					a(href="/")
-						h1 Code4SA City Press Hospital Finder
+				div.row
+					div.col-sm-1
+						a(href="/")
+							img(src="/images/heart.png" alt="Hospital Finder" class="pull-left")
+					div.col-sm-8
+						a(href="/")
+							h1 Hospital Finder
+					div.col-sm-1
+						a(href="http://code4sa.org")
+							img#c4sa_logo.logo(src="/images/c4sa_logo.png")
+					div.col-sm-2
+						a(href="http://citypress.co.za")
+							img#citypress_logo.logo(src="/images/citypress.png")
 			block content
 
 			footer
 				div.container-fluid
-					a(href="http://pixabay.com/en/heart-ekg-ecg-heart-rate-red-love-213747/") Image from Pixabay
+					| Developed by 
+					a(href="http://code4sa.org") Code for South Africa
+					| &nbsp;in partnership with 
+					a(href="http://www.citypress.co.za") CityPress
+					&nbsp;|&nbsp;
+					a(href="https://data.code4sa.org/Health/South-African-Hospitals-Survey-2011-2012/ft5b-smjr") View the data
+					&nbsp;|&nbsp;
+
+					a(href="http://pixabay.com/en/heart-ekg-ecg-heart-rate-red-love-213747/") Logo from Pixabay
 			script(src="/bower_components/jquery/dist/jquery.min.js")
 			script(src="/bower_components/handlebars/handlebars.min.js")
 			script(src="/javascripts/hospitals.js")
