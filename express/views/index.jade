@@ -4,12 +4,14 @@ block content
 	div#content.container
 		div.row.buttons
 			div.col-sm-3
+				label &nbsp;
 				button.btn.btn-warning.form-control(id="btn_location" type="button")
 					i(class="glyphicon glyphicon-screenshot") &nbsp;
 					span Hospitals near me
 			div.col-sm-9
+				label(for="address") Where are you?
 				div.input-group
-					input(type="text" name="address" id="address" placeholder="Address" class="form-control")
+					input(type="text" name="address" id="address" placeholder="Eg. Hillbrow, Johannesburg" class="form-control")
 					span.input-group-btn
 						button(id="btn_search" class="btn btn-primary" type="button") Go
 		div.row
