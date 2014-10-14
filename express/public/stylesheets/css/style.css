@@ -4,6 +4,9 @@
 #hospitals {
   margin-top: 10px;
 }
+.buttons button {
+  margin-bottom: 5px;
+}
 .logo {
   max-width: 100%;
   vertical-align: center;
