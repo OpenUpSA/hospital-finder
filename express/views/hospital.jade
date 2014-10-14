@@ -2,23 +2,19 @@ extends layout
 
 block content
 	div#content.container
-		h2 #{hospital.name}
 		div.row
-			div.col-md-4
-				dl.dl-horizontal
-
-					dt Telephone
-					dd 
-						a(class="", href="tel:#{hospital.tel}") #{hospital.tel}
-					dt Address
-						dd= hospital.street_address
-					dt Classification
-						dd= hospital.classification
+			div.col-md-6
+				h2 #{hospital.name}
+				h4.text-muted #{hospital.classification}, #{hospital.street_address}
+				p
+					a(class="", href="tel:#{hospital.tel}") #{hospital.tel}
+				
 
 				dl.dl-horizontal
-					dt Overall Rating
-					dd 
+					dt.bigger Overall
+					dd.bigger
 						+stars(hospital.overall_performance)
+						
 					dt Infection Prevention
 					dd
 						+stars(hospital.infection_prevention_and_control)
@@ -34,7 +30,24 @@ block content
 					dt Cleanliness
 					dd
 						+stars(hospital.cleanliness)
-			div.col-md-8
+
+					- if (hospital["emergency_unit-hours_per_day"] > 0) {
+					h4.red 
+						i(class="fa fa-ambulance")
+						| &nbsp;Emergency Unit
+					- }
+					- if (hospital["clinics-days_per_week"] > 0) {
+					h4.red 
+						i(class="fa fa-stethoscope")
+						| &nbsp;Clinic
+					- }
+					- if (hospital["pharmacy_and_dispensary-hours_per_day"] > 0) {
+					h4.red 
+						i(class="fa fa-medkit")
+						| &nbsp;Pharmacy and Dispensary
+					- }
+					
+			div.col-md-6
 				iframe(width="100%", height="400", frameborder="0", style="border:0", src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDE9USWolKfcLaICyby4HvdnSVDDQbA7X8&q=#{hospital.latitude},#{hospital.longitude}")
 
 		iframe(width="100%", height="980", frameborder="0", style="border:0", src="https://docs.google.com/forms/d/1PnvygUJAkTel_CgTW9DMUxPup8_sqYWpAhv1w4uBl4A/viewform?embedded=true")
