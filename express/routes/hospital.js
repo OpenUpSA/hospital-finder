@@ -13,7 +13,7 @@ router.get('/:hospital_id', function(req, res) {
 			return;
 		}
 		var hospital = rows[0];
-		res.render("hospital", { hospital: hospital });
+		res.render("hospital", { hospital: hospital, title: hospital.name });
 	});
 
 });
