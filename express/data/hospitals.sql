@@ -20,6 +20,22 @@ SET time_zone = "+00:00";
 -- Database: `hospitals`
 --
 
+CREATE TABLE IF NOT EXISTS `feedback` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `ip` varchar(16) COLLATE utf8_unicode_ci NOT NULL,
+  `hospital_uid` varchar(255) NOT NULL,
+  `rating` int(11) DEFAULT NULL,
+  `comments` text COLLATE utf8_unicode_ci NOT NULL,
+  `can_contact` tinyint(1) NOT NULL,
+  `contact_details` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `contact_name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `photo` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `photo_originalname` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `hospital_id` (`hospital_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+
 -- --------------------------------------------------------
 
 --
