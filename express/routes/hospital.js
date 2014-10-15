@@ -4,6 +4,8 @@ var request = require("request");
 var connection = require("./connection");
 var multer  = require('multer')
 var fs = require('fs');
+var GoogleSpreadsheet = require("google-spreadsheet");
+var config = require("../config");
 
 router.use(multer({ dest: './uploads/'}));
 
@@ -22,8 +24,6 @@ router.get('/:hospital_id', function(req, res) {
 });
 
 router.post('/:hospital_id', function(req, res) {
-	console.log(req.body);
-	console.log(req.files);
 	var photo = "";
 	var photo_originalname = "";
 	if (req.files.photo) {
@@ -39,8 +39,31 @@ router.post('/:hospital_id', function(req, res) {
 		connection.escape((req.body.contact_details)? req.body.contact_details : "" ) + ", " + 
 		connection.escape((req.body.contact_name)? req.body.contact_name : "") + ", " + 
 		connection.escape(photo) + ", " + 
-		connection.escape(photo_originalname) + ")");
-	res.render("thanks", { title: "Thanks for your submission" });
+		connection.escape(photo_originalname) + ")", function(err) {
+			if (err) { console.log(err); }
+			var my_sheet = new GoogleSpreadsheet('1BqmCL63QwL7RFPnzW9DQP_uPwRw4mr3Z7TqPl4LbOuQ');
+			my_sheet.setAuth(config.google_email, config.google_pass, function(err) {
+					my_sheet.getInfo( function( err, sheet_info ) {
+						console.log( sheet_info.worksheets[0] );
+						// use worksheet object if you want to forget about ids
+						sheet_info.worksheets[0].addRow({ 
+							timestamp: new Date().toString('yyyy-MM-dd HH:mm:i'),
+							ipaddress: req.connection.remoteAddress,
+							hospitaluid: req.params.hospital_id,
+							rating: req.body.rating,
+							comments: req.body.comments,
+							cancontact: req.body.can_contact,
+							contactdetails: req.body.contact_details,
+							contactname: req.body.contact_name,
+							photo: photo,
+							photooriginalname: photo_originalname,
+						});
+    				});
+    			});
+
+			res.render("thanks", { title: "Thanks for your submission" });
+	});
+	
 });
 
 module.exports = router;
