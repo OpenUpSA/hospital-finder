@@ -57,9 +57,12 @@ router.post('/:hospital_id', function(req, res) {
 							contactname: req.body.contact_name,
 							photo: photo,
 							photooriginalname: photo_originalname,
+							hospitallink: req.protocol + '://' + req.get('host') + "/hospital/" + req.params.hospital_id,
+							photolink: req.protocol + '://' + req.get('host') + "/" + photo,
 						});
     				});
     			});
+
 
 			res.render("thanks", { title: "Thanks for your submission" });
 	});
