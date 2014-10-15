@@ -37,6 +37,7 @@ CREATE TABLE IF NOT EXISTS `feedback` (
   `contact_details` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `contact_name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `photo` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `photo_originalname` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`),
   KEY `hospital_uid` (`hospital_uid`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=4 ;
