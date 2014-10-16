@@ -6,6 +6,7 @@ function showLoading() {
 }
 
 function getLocation() {
+	$("#hospitals").html("");
 	var geoOptions = {
 		enableHighAccuracy: true, 
 		maximumAge        : 30000, 
@@ -54,6 +55,7 @@ $("#finding_location").hide();
 $("#geolocation_error").hide();
 
 $("#btn_search").click(function() {
+	$("#hospitals").html("");
 	$("#finding_location").show();
 	$("#geolocation_error").hide();
 	var address = $("#address").val();
