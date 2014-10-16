@@ -15,7 +15,8 @@ function getLocation() {
         navigator.geolocation.getCurrentPosition(getLocationResult, handleError, geoOptions);
     } else {
     	$("#finding_location").hide();
-        console.log("Geolocation not supported")
+        console.log("Geolocation not supported");
+        handleError();
     }
 }
 
