@@ -48,7 +48,15 @@ block content
 					- }
 					
 			div.col-md-6
-				iframe(width="100%", height="400", frameborder="0", style="border:0", src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDE9USWolKfcLaICyby4HvdnSVDDQbA7X8&q=#{hospital.latitude},#{hospital.longitude}")
+				#map-canvas
+				script.
+					var hospital = {
+						latitude: #{ hospital.latitude },
+						longitude: #{ hospital.longitude },
+						name: "#{ hospital.name }",
+						rating: #{ hospital.overall_performance }
+					}
+				//- iframe(width="100%", height="400", frameborder="0", style="border:0", src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDE9USWolKfcLaICyby4HvdnSVDDQbA7X8&q=#{hospital.latitude},#{hospital.longitude}")
 		div.row
 			div.col-md-12
 				form.form-horizontal(method="post", enctype="multipart/form-data")
