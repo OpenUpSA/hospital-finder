@@ -35,6 +35,9 @@ header h3 {
 .fa-star-o {
   color: #166bb0;
 }
+#geolocation_error {
+  display: none;
+}
 footer {
   background-color: #f5f5f5;
   color: #444;

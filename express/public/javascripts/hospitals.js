@@ -6,8 +6,13 @@ function showLoading() {
 }
 
 function getLocation() {
+	var geoOptions = {
+		enableHighAccuracy: true, 
+		maximumAge        : 30000, 
+		timeout           : 27000
+	};
     if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(getLocationResult);
+        navigator.geolocation.getCurrentPosition(getLocationResult, handleError, geoOptions);
     } else {
     	$("#finding_location").hide();
         console.log("Geolocation not supported")
@@ -45,20 +50,28 @@ function showPosition(lat, lng) {
 
 showLoading();
 $("#finding_location").hide();
+$("#geolocation_error").hide();
 
 $("#btn_search").click(function() {
 	$("#finding_location").show();
-	console.log("Clicked Search");
+	$("#geolocation_error").hide();
 	var address = $("#address").val();
 	$.get("/address", { address: address }, function(data) {
 		showPosition(data.coords[0], data.coords[1]);
 		$("#address").val(data.address);
 		$("#finding_location").hide();
-	});
+	}).fail(handleError);
 });
+
+var handleError = function(err) {
+	$("#geolocation_error").show();
+	$("#finding_location").hide();
+	console.log("Errror", err);
+}
 
 $("#btn_location").click(function() {
 	$("#finding_location").show();
+	$("#geolocation_error").hide();
 	getLocation();
 });
 
