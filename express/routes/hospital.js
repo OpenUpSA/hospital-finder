@@ -50,7 +50,7 @@ router.post('/:hospital_id', function(req, res) {
 
 		var data = {
 			base_url: req.protocol + '://' + req.get('host'),
-			ip_address: (req.connection.remoteAddress) ? req.connection.remoteAddress : (req.headers['X-Forwarded-For']) ? request.headers['X-Forwarded-For'] : "",
+			ip_address: (req.connection.remoteAddress) ? req.connection.remoteAddress : (req.headers['X-Forwarded-For']) ? req.headers['X-Forwarded-For'] : "",
 			hospital_id: req.params.hospital_id,
 			rating: req.body.rating,
 			comments: (req.body.comments)? req.body.comments : "",
