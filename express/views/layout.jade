@@ -22,8 +22,10 @@ html
 
 		meta(name="viewport" content="width=device-width, initial-scale=1")
 		body
+			
 			header
 				div.container
+					
 					a(href="/")
 						img(src="/images/heart.png" alt="Hospital Finder" class="pull-left")
 					div.title
@@ -33,7 +35,7 @@ html
 
 			div#main-content
 				block content
-
+			
 			footer
 				div.container
 					div.row
@@ -51,9 +53,16 @@ html
 								img#c4sa_logo.logo(src="/images/c4sa_logo.png")
 							a(href="http://citypress.co.za")
 								img#citypress_logo.logo(src="/images/citypress.png")
-
+					div.row
+						div.col-sm-6
+							div.fb-like(data-href="http://hospitals.code4sa.org" data-layout="standard" data-action="like" data-show-faces="true" data-share="true")
+						div.col-sm-6
+							a(href="https://twitter.com/share" class="twitter-share-button" data-url="http://hospitals.code4sa.org" data-text="Find the best public hospitals near you with the @Code4SA @CityPress Find a Hospital app" data-via="code4sa") Tweet
+			#fb-root
+			script(src="/javascripts/facebook.js")
 			script(src="/bower_components/jquery/dist/jquery.min.js")
 			script(src="/bower_components/handlebars/handlebars.min.js")
 			script(src="/javascripts/hospitals.js")
 			script(src="/javascripts/analytics.js")
+			script(src="/javascripts/twitter.js")
 			
