@@ -19,6 +19,7 @@
     "newrelic": "^1.12.0",
     "connect-busboy": "0.0.2",
     "multer": "^0.1.6",
-    "google-spreadsheet": "^0.2.8"
+    "google-spreadsheet": "^0.2.8",
+    "nodemailer": "^1.3.0"
   }
 }

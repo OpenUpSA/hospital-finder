@@ -1,0 +1,46 @@
+a(href="#{ base_url }")
+	img(src="#{ base_url }/images/heart.png" alt="Hospital Finder" class="pull-left")
+div.title
+	a(href="#{ base_url }")
+		h1 Find a Hospital
+p.
+	We have recieved a new submission on the Hospitals App at #{ timestamp } from IP address #{ ip_address }
+
+p
+	strong Hospital
+	br
+	a(href="#{ base_url }/hospital/#{ hospital_id }").
+		#{ hospital.name }
+p
+	strong Rating
+	br
+	= rating
+p
+	strong Government rating 
+	br
+	| #{ hospital.overall_performance }%
+
+p
+	strong Can CityPress contact this person?
+	br
+	= can_contact
+p
+	strong Contact name
+	br
+	= contact_name
+p
+	strong Contact details
+	br
+	= contact_details
+p
+	strong Comments
+	br
+	= comments
+p
+	strong Photo
+	br
+	a(href="#{ photo_link }") #{photo_originalname}
+p
+	a(href="https://docs.google.com/a/code4sa.org/spreadsheets/d/1BqmCL63QwL7RFPnzW9DQP_uPwRw4mr3Z7TqPl4LbOuQ") See the Results Spreadsheet
+p.
+	For more assistance, reply to this email to contact Code4SA.
