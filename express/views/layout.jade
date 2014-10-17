@@ -1,94 +1,97 @@
 mixin stars(perc)
-	- var count = Math.round(perc/20);
-	- for (var i = 0; i < count; i++) {
-		i.fa.fa-star
-	- }
-	- for (var i = count; i < 5; i++) {
-		i.fa.fa-star-o
-	- }
+  - var count = Math.round(perc/20);
+  - for (var i = 0; i < count; i++) {
+    i.fa.fa-star
+  - }
+  - for (var i = count; i < 5; i++) {
+    i.fa.fa-star-o
+  - }
 
 doctype html
 html
-	head
-		title= title
-		link(rel='stylesheet', href='/bower_components/bootstrap/dist/css/bootstrap.min.css')
-		link(rel='stylesheet', href='/bower_components/font-awesome/css/font-awesome.min.css')
-		link(rel='stylesheet', href='/stylesheets/css/style.css')
+  head
+    title= title
+    link(rel='stylesheet', href='/bower_components/bootstrap/dist/css/bootstrap.min.css')
+    link(rel='stylesheet', href='/bower_components/font-awesome/css/font-awesome.min.css')
+    link(rel='stylesheet', href='/stylesheets/css/style.css')
 
-		meta(property="og:type" content="article")
-		meta(property="og:title" content=title)
-		meta(property="og:description" content="Find the best public hospital wherever you are in South Africa")
-		meta(property="og:site_name" content="Code4SA Hospital Finder")
+    meta(property="og:type" content="article")
+    meta(property="og:title" content=title)
+    meta(property="og:description" content="Find the best public hospital wherever you are in South Africa")
+    meta(property="og:site_name" content="Code4SA Hospital Finder")
 
-		meta(name="viewport" content="width=device-width, initial-scale=1")
-		body
-			
-			header
-				div.container
-					
-					a(href="/")
-						img(src="/images/heart.png" alt="Hospital Finder" class="pull-left")
-					div.title
-						a(href="/")
-							h1 Find a Hospital
-						h3.text-muted Find the best public hospitals near you
-					div.row.buttons
-						div.col-sm-3
-							label &nbsp;
-							button.btn.btn-warning.form-control(id="btn_location" type="button")
-								i(class="glyphicon glyphicon-screenshot") &nbsp;
-								span Hospitals near me
-						div.col-sm-9
-							label.text-muted(for="address") Where are you?
-							div.input-group
-								input(type="text" name="address" id="address" placeholder="Eg. Hillbrow, Johannesburg" class="form-control")
-								span.input-group-btn
-									button(id="btn_search" class="btn btn-primary" type="button") Go
-					div.row
-						div.col-sm-12
-							h5.text-muted Find the best hospital near you based on official ratings by the Department of Health, and tell us what your visit was like.
-					div.row
-						div.col-sm-12
-							div#finding_location.alert.alert-warning Finding location
-					div.row#geolocation_error
-						div.col-sm-12
-							div.alert.alert-danger I'm sorry, we couldn't find your location :(
-			div#content.container
-				div.row
-					div.col-sm-12
-						div#hospitals
-							block content
-			
-			footer
-				div.container
-					div.row
-						div.col-sm-6
-							p
-								| Developed by 
-								a(href="http://code4sa.org") Code for South Africa
-								| &nbsp;in partnership with 
-								a(href="http://www.citypress.co.za") CityPress
-							p
-								a(href="https://data.code4sa.org/Health/South-African-Hospitals-Survey-2011-2012/ft5b-smjr") View the data
-							
-						div.col-sm-6.text-right
-							a(href="http://code4sa.org")
-								img#c4sa_logo.logo(src="/images/c4sa_logo.png")
-							a(href="http://citypress.co.za")
-								img#citypress_logo.logo(src="/images/citypress.png")
-					div.row
-						div.col-sm-6
-							div.fb-like(data-href="http://hospitals.code4sa.org" data-layout="standard" data-action="like" data-show-faces="true" data-share="true")
-						div.col-sm-6
-							a(href="https://twitter.com/share" class="twitter-share-button" data-url="http://hospitals.code4sa.org" data-text="Find the best public hospitals near you with the @Code4SA @CityPress Find a Hospital app" data-via="code4sa") Tweet
-			script(id="hospital-template" type="text/x-handlebars-template")
-				include hospital.html
-			#fb-root
-			script(src="/javascripts/facebook.js")
-			script(src="/bower_components/jquery/dist/jquery.min.js")
-			script(src="/bower_components/handlebars/handlebars.min.js")
-			script(src="/javascripts/analytics.js")
-			script(src="/javascripts/twitter.js")
-			script(src="https://maps.googleapis.com/maps/api/js?v=3.exp")
-			script(src="/javascripts/map.js")
-			script(src="/javascripts/hospitals.js")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    body
+      
+      header
+        div.container
+          
+          a(href="/")
+            img(src="/images/heart.png" alt="Hospital Finder" class="pull-left")
+          div.title
+            a(href="/")
+              h1 Find a Hospital
+            h3.text-muted Find the best public hospitals near you
+          div.row.buttons
+            div.col-sm-3
+              label &nbsp;
+              button.btn.btn-warning.form-control(id="btn_location" type="button")
+                i(class="glyphicon glyphicon-screenshot") &nbsp;
+                span Hospitals near me
+            div.col-sm-9
+              label.text-muted(for="address") Where are you?
+              div.input-group
+                input(type="text" name="address" id="address" placeholder="Eg. Hillbrow, Johannesburg" class="form-control")
+                span.input-group-btn
+                  button(id="btn_search" class="btn btn-primary" type="button") Go
+          div.row
+            div.col-sm-12
+              h5.text-muted Find the best hospital near you based on official ratings by the Department of Health, and tell us what your visit was like.
+          div.row
+            div.col-sm-12
+              div#finding_location.alert.alert-warning Finding location
+          div.row#geolocation_error
+            div.col-sm-12
+              div.alert.alert-danger I'm sorry, we couldn't find your location :(
+      div#content.container
+        div.row
+          div.col-sm-12
+            div#hospitals
+              block content
+      
+      footer
+        div.container
+          div.row
+            div.col-sm-6
+              p
+                | Developed by 
+                a(href="http://code4sa.org") Code for South Africa
+                | &nbsp;in partnership with 
+                a(href="http://www.citypress.co.za") CityPress
+              p
+                a(href="https://data.code4sa.org/Health/South-African-Hospitals-Survey-2011-2012/ft5b-smjr") View the data
+              
+            div.col-sm-6.text-right
+              a(href="http://code4sa.org")
+                img#c4sa_logo.logo(src="/images/c4sa_logo.png")
+              a(href="http://citypress.co.za")
+                img#citypress_logo.logo(src="/images/citypress.png")
+  
+          p.tweet
+            a(href="https://twitter.com/share" class="twitter-share-button" data-url="http://hospitals.code4sa.org" data-text="Find the best public hospitals near you with the @Code4SA @CityPress Find a Hospital app" data-via="code4sa") Tweet
+
+          p
+            div.fb-like(data-href="http://hospitals.code4sa.org" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true")
+
+      script(id="hospital-template" type="text/x-handlebars-template")
+        include hospital.html
+
+      #fb-root
+      script(src="/javascripts/facebook.js")
+      script(src="/bower_components/jquery/dist/jquery.min.js")
+      script(src="/bower_components/handlebars/handlebars.min.js")
+      script(src="/javascripts/analytics.js")
+      script(src="/javascripts/twitter.js")
+      script(src="https://maps.googleapis.com/maps/api/js?v=3.exp")
+      script(src="/javascripts/map.js")
+      script(src="/javascripts/hospitals.js")
