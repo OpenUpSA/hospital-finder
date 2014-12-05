@@ -1,10 +1,6 @@
 var mysql = require("mysql");
-
-var connection = mysql.createConnection({
-	host     : 'localhost',
-	user     : 'c4sa_hospitals',
-	password : 'RZaAS24MHes2rB9c'
-});
+var config = require("../config");
+var connection = mysql.createConnection(config.db_url);
 
 connection.connect(function(err) {
 	if (err) {
