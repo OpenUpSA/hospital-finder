@@ -2,6 +2,6 @@
 *.pdf
 newrelic_agent.log
 */txt/
-express/node_modules/
+node_modules/
 */uploads/*
 config.js
