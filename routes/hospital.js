@@ -21,7 +21,7 @@ var transporter = nodemailer.createTransport({
 
 router.get('/:hospital_id', function(req, res) {
 	var uid = req.params.hospital_id;
-	connection.query( "SELECT * FROM hospitals.hospitals WHERE uid = " + connection.escape(uid),
+	connection.query( "SELECT * FROM hospitals WHERE uid = " + connection.escape(uid),
 	function(err, rows, fields) {
 		if (err) {
 			res.status(500).send("Database broken :(");
@@ -34,7 +34,7 @@ router.get('/:hospital_id', function(req, res) {
 });
 
 router.post('/:hospital_id', function(req, res) {
-	connection.query( "SELECT * FROM hospitals.hospitals WHERE uid = " + connection.escape(req.params.hospital_id),
+	connection.query( "SELECT * FROM hospitals WHERE uid = " + connection.escape(req.params.hospital_id),
 	function(err, rows, fields) {
 		if (err) {
 			res.status(500).send("Database broken :(");
@@ -65,7 +65,7 @@ router.post('/:hospital_id', function(req, res) {
 			hospital: rows[0],
 		}
 		// First save to Database
-		connection.query("INSERT INTO hospitals.feedback (hospital_uid, ip, rating, comments, can_contact, contact_details, contact_name, photo, photo_originalname) VALUES (" +
+		connection.query("INSERT INTO feedback (hospital_uid, ip, rating, comments, can_contact, contact_details, contact_name, photo, photo_originalname) VALUES (" +
 			connection.escape(data.hospital_id) + ", " + 
 			connection.escape(data.ip_address) + ", " + 
 			connection.escape(data.rating) + ", " + 
