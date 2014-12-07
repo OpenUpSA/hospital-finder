@@ -1,12 +1,6 @@
 var mysql = require("mysql");
 var config = require("../config");
-var connection = mysql.createConnection(config.db_url);
+var pool = mysql.createPool(config.db_url);
+pool.config.connectionLimit = 1;
 
-connection.connect(function(err) {
-	if (err) {
-		console.log(err);
-		return;
-	}
-});
-
-module.exports = connection;
+module.exports = pool;
