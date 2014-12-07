@@ -26,7 +26,6 @@ mysql hospitals -uroot -p(your password) < express/data/hospitals.sql
 To install the express app, do the following:
 
 ```bash
-cd express
 npm install
 npm start
 ```
@@ -34,3 +33,7 @@ npm start
 The app should now be running on port http://localhost:3000.
 
 If you want to run it on a server or somewhere apart from localhost, you'll need to update the Google Geocoding browser API key at /express/public/javascript/hospitals.js (right at the top). You can get one if you don't have it at https://code.google.com/apis/console/b/0/?noredirect. The system will still work without this - it's just used for reverse geocoding lookup when you use the location finder, and it fills in the address field. For other geo-lookups, we use the Code4SA Address to Ward Converter. 
+
+## Deployment
+
+This app runs on Heroku. To deploy, just `git push heroku`.

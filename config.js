@@ -7,6 +7,8 @@ var config = {
 	email_pass: "MyPassword",
 	email_to: "blah@blah.com, blahblah@blah.com",
 	email_subject: 'New Submission from Hospitals App',
-}
+
+  db_url: process.env.DATABASE_URL || 'mysql://c4sa_hospitals:RZaAS24MHes2rB9c@localhost/hospitals',
+};
 
 module.exports = config;

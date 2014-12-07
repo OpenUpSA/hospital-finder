@@ -21,7 +21,7 @@ router.get('/', function(req, res) {
                  * COS(RADIANS(longpoint) - RADIANS(longitude)) \
                  + SIN(RADIANS(latpoint)) \
                  * SIN(RADIANS(latitude)))) AS distance_in_km \
- FROM hospitals.hospitals \
+ FROM hospitals \
  JOIN ( \
      SELECT  ' + connection.escape(lat) + '  AS latpoint,  ' + connection.escape(lng) + ' AS longpoint \
    ) AS p \
