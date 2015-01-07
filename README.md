@@ -20,7 +20,7 @@ flush privileges;
 
 Then on the command line:
 ```bash
-mysql hospitals -uroot -p(your password) < express/data/hospitals.sql
+mysql -uroot -p hospitals < data/hospitals.sql
 ```
 
 To install the express app, do the following:
