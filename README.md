@@ -36,4 +36,9 @@ If you want to run it on a server or somewhere apart from localhost, you'll need
 
 ## Deployment
 
-This app runs on Heroku. To deploy, just `git push heroku`.
+This app runs on Dokku and is compitable with Heroku. To deploy:
+
+```bash
+git remote add dokku dokku@dokku.code4sa.org:hospitals.git
+git push dokku
+```
