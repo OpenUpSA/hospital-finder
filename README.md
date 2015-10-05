@@ -1,8 +1,8 @@
 # Hospital Finder
 
-This project uses data supplied by City Press of South African hospitals that have been surveyed by the Department of Health in 2011/2012.
+This project uses data of South African hospitals that have been surveyed by the Department of Health in 2011/2012.
 
-The project is split into two parts. The first part, under CityPress - Hospitals, deals with the scraping of the PDFs from the DoH.
+The project is split into two parts. The first part deals with the scraping of the PDFs from the DoH.
 
 The second part, under express, is a Node.js Express app that searches for the nearest hospitals, and then returns the closest with their ratings.
 
